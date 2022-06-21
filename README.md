@@ -36,9 +36,9 @@ All pre-trained models are provided under `models/`.
 Examples to test models:
 ``` 
 # Testing Traj++Edge on ETH
-python bin/test_trajectron.py models/trajectron/eth-ucy/eth_edge 100 data/eth-ucy/eth_test.pkl cpu 
+env PYTHONPATH=src python bin/test_trajectron.py models/trajectron/eth-ucy/eth_edge 100 data/eth-ucy/eth_test.pkl cpu 
 # Testing PECNet on SDD
-python bin/test_pecnet.py thirdparty/PECNet/saved_models/PECNET_social_model1.pt thirdparty/PECNet/social_pool_data/test_all_4096_0_100.pickle
+env PYTHONPATH=src python bin/test_pecnet.py thirdparty/PECNet/saved_models/PECNET_social_model1.pt thirdparty/PECNet/social_pool_data/test_all_4096_0_100.pickle
 ```
 
 To test the models without interaction, append ```--without_neighbours``` to the call.
@@ -47,7 +47,7 @@ To test the models without interaction, append ```--without_neighbours``` to the
 An example call to train Trajectron++Edge:
 ``` 
 # Training Traj++Edge on SportVU 
-python bin/train_trajectron.py --config models/trajectron/sport/edge/config.json --data_dir data/sport --train_data_dict trajectron_train.pkl --log_dir logs --log_tag sport_traj++Edge --train_epochs 20 --save_every 5 --deeper_action --late_fusion
+env PYTHONPATH=src python bin/train_trajectron.py --config models/trajectron/sport/edge/config.json --data_dir data/sport --train_data_dict trajectron_train.pkl --log_dir logs --log_tag sport_traj++Edge --train_epochs 20 --save_every 5 --deeper_action --late_fusion
 ```
 
 ### Shapley Values Estimation
@@ -55,10 +55,10 @@ Example calls to compute Shapley values:
 
 ``` 
 # Shapley values of Traj++Edge on the first scene of SportVU
-python bin/compute_shapley_values_trajectron.py models/trajectron/sport/edge 20 data/sport/trajectron_test.pkl cuda:0 home nll zero 0 results/sport/Traj++Edge --random_node_types home guest
+env PYTHONPATH=src python bin/compute_shapley_values_trajectron.py models/trajectron/sport/edge 20 data/sport/trajectron_test.pkl cuda:0 home nll zero 0 results/sport/Traj++Edge --random_node_types home guest
 
 # Shapley values of PECNet on the first scene of SportVU
-python bin/compute_shapley_values_pecnet.py models/pecnet/sport.pt data/sport/pecnet_test.pkl 0 results/sport/pecnet
+env PYTHONPATH=src python bin/compute_shapley_values_pecnet.py models/pecnet/sport.pt data/sport/pecnet_test.pkl 0 results/sport/pecnet
 ```
 The above calls estimate the Shapley values per scene, to merge the results over all scenes of a dataset:
 
