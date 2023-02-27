@@ -1,5 +1,5 @@
 dill==0.3.3
-ipython==7.31.1
+ipython==8.10.0
 isort==4.3.21
 joblib==1.2.0
 json5==0.9.1
