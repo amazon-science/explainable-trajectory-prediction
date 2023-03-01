@@ -67,5 +67,5 @@ if __name__ == "__main__":
     with open(parameters.config, "r", encoding="utf-8") as config_json:
         model_parameters = json.load(config_json)
     override_parameters(model_parameters, parameters)
-    trainer = train.Trainer(train_parameters, model_parameters)
+    trainer = train.Trainer(parameters, model_parameters)
     trainer.fit()
