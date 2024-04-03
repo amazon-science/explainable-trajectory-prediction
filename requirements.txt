@@ -12,7 +12,7 @@ orjson==3.9.15
 pandas==1.0.1
 path==13.1.0
 pathlib2==2.3.5
-Pillow==10.2.0
+Pillow==10.3.0
 py7zr==0.20.2
 pydocstyle==4.0.1
 pytest==5.3.5
